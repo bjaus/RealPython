@@ -1,31 +1,28 @@
-# sql.py - Create a SQLite3 table and populate it with data
+# blog.py - controller
+
+# imports 
+from flask import (Flask,
+				   render_template,
+				   request,
+				   session,
+				   flash,
+				   redirect,
+				   url_for, 
+				   g)
 import sqlite3
 
-# create a new database if the database doesn't already exist
-with sqlite3.connect('blog.db') as connection:
-	# get a cursor object used to execute SQL commands
-	c = connection.cursor()
+# configuration
+DATABASE = 'blog.db'
 
-	# create the table
-	c.execute("""
-		CREATE TABLE posts
-		(title TEXT, post TEXT)
-		""")
+app = Flask(__name__)
 
-	# insert dummy data into the table
-	c.execute("""
-		INSERT INTO posts
-		VALUES("Good", "I'm good.")
-		""")
-	c.execute("""
-		INSERT INTO posts
-		VALUES("Well", "I'm well.")
-		""")
-	c.execute("""
-		INSERT INTO posts
-		VALUES("Excellent", "I'm excellent.")
-		""")
-	c.execute("""
-		INSERT INTO posts
-		VALUES("Okay", "I'm okay.")
-		""")
+# pulls in app configuation by looking
+# for UPPERCASE variables
+app.config.from_object(__name__)
+
+# function used for conecting to the database
+def conenct_db():
+	return sqlite3.conect(app.config['DATABASE'])
+
+if __name__ == '__main__':
+	app.run(debug=True)
