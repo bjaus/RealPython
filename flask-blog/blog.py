@@ -1,14 +1,8 @@
 # blog.py - controller
 
 # imports 
-from flask import (Flask,
-				   render_template,
-				   request,
-				   session,
-				   flash,
-				   redirect,
-				   url_for, 
-				   g)
+from flask import (Flask, render_template,
+request, session, flash, redirect, url_for, g)
 import sqlite3
 
 # configuration
