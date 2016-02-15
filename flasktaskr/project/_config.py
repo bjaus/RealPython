@@ -1,3 +1,6 @@
+# project/_config.py
+# _config.py: holds the app's settings and configuration global varaibles
+
 import os
 
 # grab the folder where this script lives

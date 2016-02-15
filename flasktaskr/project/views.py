@@ -1,4 +1,7 @@
 # projects/views.py
+# views.py: contains the busienss logic - 
+# e.g., the routing rules - and sets up the Flask app 
+#(the latter of which could actually be moved to a different file)
 
 import sqlite3
 from functools import wraps
