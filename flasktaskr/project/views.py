@@ -6,7 +6,7 @@ from flask import (Flask, flash, redirect, render_template,
 				   request, session, url_for)
 				   
 # config
-app = flask(__name__)
+app = Flask(__name__)
 app.config.from_object('_config')
 
 # helper functions
