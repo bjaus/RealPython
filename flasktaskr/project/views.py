@@ -53,7 +53,7 @@ def login():
 
 	
 @app.route('/register/', methods=['GET', 'POST'])
-def register():
+def register(): 
 	error = None
 	form = RegisterForm(request.form)
 	if request.method == 'POST':
