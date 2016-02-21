@@ -80,7 +80,7 @@ def register():
             new_user = User(
                 form.name.data,
                 form.email.data,
-                form.password.data,
+                form.password.data
             )
             db.session.add(new_user)
             db.session.commit()
