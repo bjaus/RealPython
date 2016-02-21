@@ -63,7 +63,7 @@ def tasks():
     closed_tasks = db.session.query(Task) \
         .filter_by(status='0').order_by(Task.due_date.asc())
     return render_template(
-        'tasks.html'),
+        'tasks.html',
         form=AddTaskForm(request.form),
         open_tasks=open_tasks,
         closed_tasks=closed_tasks
