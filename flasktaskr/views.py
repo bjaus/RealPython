@@ -66,7 +66,7 @@ def login():
 def tasks():
 	g.db = connect_db()
 	cur = g.db.execute("""
-		SLECT name, due_date, priority, task_id
+		SELECT name, due_date, priority, task_id
 		FROM tasks
 		WHERE status=1
 		"""
@@ -83,7 +83,7 @@ def tasks():
 	)
 	closed_tasks = [
 		dict(name=row[0], due_date=row[1], priority=row[2],
-			 task_id=row[3]) for row in cur.fetcall()
+			 task_id=row[3]) for row in cur.fetchall()
 	]
 	g.db.close()
 	return render_template(
