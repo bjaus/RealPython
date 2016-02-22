@@ -12,7 +12,7 @@ class Task(db.Model):
 	task_id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String, nullable=False)
 	due_date = db.Column(db.Date, nullable=False)
-	priority = db.Column(db.Integer, nullabe=False)
+	priority = db.Column(db.Integer, nullable=False)
 	status = db.Column(db.Integer)
 	
 	def __init__(self, name, due_date, priority, status):
