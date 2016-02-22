@@ -75,7 +75,7 @@ def tasks():
 		dict(name=row[0], due_date=row[1], priority=row[2],
 			 task_id=row[3]) for row in cur.fetchall()
 	]
-	cur g.db.execute("""
+	cur = g.db.execute("""
 		SELECT name, due_date, priority, task_id
 		FROM tasks
 		WHERE status=0
