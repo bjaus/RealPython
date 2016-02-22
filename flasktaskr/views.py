@@ -1,5 +1,5 @@
 ##################
-#### views.py ####
+#### imports ####
 ##################
 
 import sqlite3
@@ -7,6 +7,7 @@ from functools import wraps
 
 from flask import Flask, flash, redirect, render_template, \
 	request, session, url_for, g
+from forms import AddTaskForm
 
 
 ################
