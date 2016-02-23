@@ -2,45 +2,20 @@
 {% block content %}
 
 <h1>Welcome to FlashTaskr</h1>
+<br/>
 <a href="/logout">Logout</a>
-<dv class="add-task">
+<div class="add-task">
 	<h3>Add a new task:</h3>
-	<table>
-		<tr>
-			<form action="{{ url_for('new_task') }}" method="post">
-				{{ form.csrf_token }}
-				<td>
-					<label>Task Name:</label>
-					<input name="name" type="text">
-				</td>
-				<td>
-					<label>DueDate (mm/dd/yyyy):</label>
-					<input name="due_date" type="text" width="120px">
-				</td>
-				<td>
-					<label>Priority:</label>
-					<select name="priority" width="100px">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
-						<option value="10">10</option>
-					</select>
-				</td>
-				<td>
-					&nbsp;
-					&nbsp;
-					<input class="button" type="submit" value="Save">
-				</td>
-			</form>
-		</tr>
-	</table>
-</dv>
+	<form action="{{ url_for('new_task') }}" method="post">
+		{{ form.csrf_token }}
+		<p>
+			{{ form.name.label }}: {{ form.name }}<br/>
+			{{ form.due_date.label }}: {{ form.due_date }}<br/>
+			{{ form.priority.label }}: {{ form.priority }}
+		</p>
+		<p><input type="submit" value="Submit"></p>
+	</form>
+</div>
 <div class="entries">
 <br/>
 <br/>
