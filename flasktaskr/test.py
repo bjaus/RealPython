@@ -29,11 +29,14 @@ class AllTests(unittest.TestCase):
 		db.drop_all()
 
 	# each test should start with 'test'
-	def test_user_setup(self):
-		new_user = User("michael", "michael@mherman.org",
-			"michaelherman")
+	def test_users_can_register(self):
+		new_user = User("michael", "michael@mherman.org", "michaelherman")
 		db.session.add(new_user)
 		db.session.commit()
+		test = db.session.query(User).all()
+		for t in test:
+			t.name
+		assert t.name == "michael"
 
 
 if __name__ == "__main__":
