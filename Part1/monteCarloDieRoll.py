@@ -16,7 +16,7 @@ def monte_carlo_sim():
 		roll = randint(1,6)
 		total += roll
 	
-	print("\nThe average of {:,} die rolls is {}\n".format(i, round(total / i, 3)))
+	print("\nThe average of {:,} die rolls is {}.\n".format(i, round(total / i, 3)))
 
 
 if __name__ == "__main__":
